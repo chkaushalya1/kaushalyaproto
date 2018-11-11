@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "631794171998",
+    "firebase_url": "https://kaushalyaproto.firebaseio.com",
+    "project_id": "kaushalyaproto",
+    "storage_bucket": "kaushalyaproto.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:631794171998:android:ae0463541d289d51",
+        "android_client_info": {
+          "package_name": "com.example.pratik.kaushalyaproto"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "631794171998-ue6vnb8qlvbapkuabslncc3lujlput5n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pratik.kaushalyaproto",
+            "certificate_hash": "6d6f94f3f86f00974d54aafbdec96a5406d19635"
+          }
+        },
+        {
+          "client_id": "631794171998-daad2oov0dgpshmovlr695746181l431.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_3jyVfa7GUEJncOUi65fd0twkivoBNrc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "631794171998-daad2oov0dgpshmovlr695746181l431.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
