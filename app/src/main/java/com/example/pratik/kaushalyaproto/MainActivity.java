@@ -72,6 +72,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toast.makeText(this, mAuth.getCurrentUser().getUid(), Toast.LENGTH_SHORT).show();
 
 
+        //functionality
         courseCard = findViewById(R.id.card_courses);
         jobCard = findViewById(R.id.card_job);
         equipmentsCard = findViewById(R.id.card_equipments);
