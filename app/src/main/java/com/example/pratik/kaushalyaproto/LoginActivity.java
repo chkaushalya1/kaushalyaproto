@@ -32,19 +32,18 @@ import com.google.firebase.auth.PhoneAuthProvider;
 
 import java.util.concurrent.TimeUnit;
 
-public class SignUpActivity extends AppCompatActivity {
-
-    private FirebaseAuth mAuth;
+public class LoginActivity extends AppCompatActivity {
 
     //phone
     private static final String TAG = "PhoneAuthActivity";
-    private String email, password;
     private static final String KEY_VERIFY_IN_PROGRESS = "key_verify_in_progress";
     //google
     private static final String gTAG = "GoogleActivity";
     private static final int RC_SIGN_IN = 9001;
     String phones;
+    private FirebaseAuth mAuth;
     private Button EmailButton, PhoneButton, GoogleButton, SignupButton, mSignupButton;
+    private String email, password;
     private boolean mVerificationInProgress = false;
     private String mVerificationId;
     //end phone
@@ -55,7 +54,9 @@ public class SignUpActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signup);
+        setContentView(R.layout.activity_login);
+
+        Toast.makeText(this, "LoginActivity", Toast.LENGTH_SHORT).show();
 
         mAuth = FirebaseAuth.getInstance();
         EmailButton = findViewById(R.id.btn_email_option);
@@ -67,14 +68,20 @@ public class SignUpActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 finish();
-                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                startActivity(new Intent(getApplicationContext(), SignUpActivity.class));
             }
         });
 
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
 
+        if (mAuth.getCurrentUser() != null) {
+            finish();
+            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+        }
+
         //google
+
         // [START config_signin]
         // Configure Google Sign In
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -97,7 +104,7 @@ public class SignUpActivity extends AppCompatActivity {
         EmailButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AlertDialog.Builder mBuilder = new AlertDialog.Builder(SignUpActivity.this);
+                AlertDialog.Builder mBuilder = new AlertDialog.Builder(LoginActivity.this);
                 View mView = getLayoutInflater().inflate(R.layout.dialog_email, null);
 
                 final EditText mEmail = (EditText) mView.findViewById(R.id.email);
@@ -111,13 +118,12 @@ public class SignUpActivity extends AppCompatActivity {
                 mLogin.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Toast.makeText(SignUpActivity.this, "Login with Email", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "Login with Email", Toast.LENGTH_SHORT).show();
 
                         email = mEmail.getText().toString();
                         password = mPassword.getText().toString();
 
-                        createAccount(email, password);
-
+                        signinemail(email, password);
                     }
                 });
 
@@ -128,7 +134,7 @@ public class SignUpActivity extends AppCompatActivity {
         PhoneButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AlertDialog.Builder mBuilder = new AlertDialog.Builder(SignUpActivity.this);
+                AlertDialog.Builder mBuilder = new AlertDialog.Builder(LoginActivity.this);
                 View mView = getLayoutInflater().inflate(R.layout.dialog_phone, null);
                 final EditText phone = mView.findViewById(R.id.phone);
                 final EditText coderecv = mView.findViewById(R.id.code);
@@ -152,11 +158,11 @@ public class SignUpActivity extends AppCompatActivity {
                 mLogin.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Toast.makeText(SignUpActivity.this, "Login with Phone", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "Login with Phone", Toast.LENGTH_SHORT).show();
 
                         String code = coderecv.getText().toString();
                         if (TextUtils.isEmpty(code)) {
-                            Toast.makeText(SignUpActivity.this, "Cannot be empty.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "Cannot be empty.", Toast.LENGTH_SHORT).show();
                             return;
                         }
 
@@ -187,7 +193,7 @@ public class SignUpActivity extends AppCompatActivity {
 
                 // [START_EXCLUDE silent]
                 // Update the UI and attempt sign in with the phone credential
-                Toast.makeText(SignUpActivity.this, "State verify sucess", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "State verify sucess", Toast.LENGTH_SHORT).show();
                 //updateUI(STATE_VERIFY_SUCCESS, credential);
                 // [END_EXCLUDE]
                 signInWithPhoneAuthCredential(credential);
@@ -205,13 +211,13 @@ public class SignUpActivity extends AppCompatActivity {
                 if (e instanceof FirebaseAuthInvalidCredentialsException) {
                     // Invalid request
                     // [START_EXCLUDE]
-                    Toast.makeText(SignUpActivity.this, "Invalid phone number.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Invalid phone number.", Toast.LENGTH_SHORT).show();
                     //mPhoneNumberField.setError("Invalid phone number.");
                     // [END_EXCLUDE]
                 } else if (e instanceof FirebaseTooManyRequestsException) {
                     // The SMS quota for the project has been exceeded
                     // [START_EXCLUDE]
-                    Toast.makeText(SignUpActivity.this, "Quota exceeded.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Quota exceeded.", Toast.LENGTH_SHORT).show();
                     // [END_EXCLUDE]
                 }
 
@@ -235,7 +241,7 @@ public class SignUpActivity extends AppCompatActivity {
 
                 // [START_EXCLUDE]
                 // Update UI
-                Toast.makeText(SignUpActivity.this, "Code Sent", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "Code Sent", Toast.LENGTH_SHORT).show();
                 //updateUI(STATE_CODE_SENT);
                 // [END_EXCLUDE]
             }
@@ -283,12 +289,12 @@ public class SignUpActivity extends AppCompatActivity {
                             Log.d(gTAG, "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
                             //updateUI(user);
-                            startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
                             finish();
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(gTAG, "signInWithCredential:failure", task.getException());
-                            Toast.makeText(SignUpActivity.this, "SignIn Failed!!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "SignIn Failed!!", Toast.LENGTH_SHORT).show();
                         }
 
                         // [START_EXCLUDE]
@@ -368,7 +374,7 @@ public class SignUpActivity extends AppCompatActivity {
 
                             FirebaseUser user = task.getResult().getUser();
                             // [START_EXCLUDE]
-                            startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
                             finish();
                             //updateUI(STATE_SIGNIN_SUCCESS, user);
                             // [END_EXCLUDE]
@@ -378,7 +384,7 @@ public class SignUpActivity extends AppCompatActivity {
                             if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
                                 // The verification code entered was invalid
                                 // [START_EXCLUDE silent]
-                                Toast.makeText(SignUpActivity.this, "Invalid code.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, "Invalid code.", Toast.LENGTH_SHORT).show();
                                 //mVerificationField.setError("Invalid code.");
                                 // [END_EXCLUDE]
                             }
@@ -392,29 +398,44 @@ public class SignUpActivity extends AppCompatActivity {
     }
 // [END sign_in_with_phone]
 
-    private void createAccount(String email, String password){
-        Toast.makeText(this, email + " " + password, Toast.LENGTH_SHORT).show();
-        mAuth.createUserWithEmailAndPassword(email, password)
+    private void signinemail(String email, String password) {
+        mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
-                            Log.d("TagSignup", "createUserWithEmail:success");
-                            //FirebaseUser user = mAuth.getCurrentUser();
-
-                            startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                            Log.d(TAG, "signInWithEmail:success");
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
                             finish();
                         } else {
                             // If sign in fails, display a message to the user.
-                            Log.w("TagSignup", "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(SignUpActivity.this, "Authentication failed.",
+                            Log.w(TAG, "signInWithEmail:failure", task.getException());
+                            Toast.makeText(LoginActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
-
                         }
 
                         // ...
                     }
                 });
+
+
     }
+/*
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        Toast.makeText(this, currentUser.getUid(), Toast.LENGTH_SHORT).show();
+
+// [START_EXCLUDE]
+        if (mVerificationInProgress && !phones.equals("")) {
+            startPhoneNumberVerification(phones);
+        } else
+            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+// [END_EXCLUDE]
+
+    }*/
 }

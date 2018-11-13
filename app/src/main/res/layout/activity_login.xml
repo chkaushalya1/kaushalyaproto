@@ -26,7 +26,7 @@
             android:layout_marginBottom="16dp"
             android:drawableLeft="@drawable/ic_envelope"
             android:drawablePadding="10dp"
-            android:text="@string/signup_with_email"
+            android:text="@string/signin_with_email"
             android:textAllCaps="false"
             android:textSize="18sp" />
 
@@ -39,32 +39,32 @@
             android:layout_marginBottom="16dp"
             android:drawableLeft="@drawable/ic_cell_phone"
             android:drawablePadding="10dp"
-            android:text="@string/signup_with_phone"
+            android:text="@string/signin_with_phone"
             android:textAllCaps="false"
             android:textSize="18sp" />
 
         <Button
             android:id="@+id/btn_google_option"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
-            android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:drawableLeft="@drawable/ic_google"
             android:drawablePadding="10dp"
-            android:text="@string/signup_with_google"
+            android:text="@string/signin_with_google"
             android:textAllCaps="false"
             android:textSize="18sp" />
 
         <Button
-            android:id="@+id/btn_signin"
+            android:id="@+id/btn_signup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
-            android:background="@null"
             android:layout_marginBottom="16dp"
-            android:text="@string/btn_link_to_login"
+            android:background="@null"
+            android:text="@string/btn_link_to_register"
             android:textAllCaps="false"
             android:textSize="16sp" />
 
