@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_myaccount"
+            android:icon="@drawable/ic_user"
+            android:title="@string/myaccount" />
+        <item
+            android:id="@+id/nav_mycourses"
+            android:icon="@drawable/ic_ebook"
+            android:title="@string/mycourses" />
+
+    </group>
+
+    <item android:title="Job">
+        <menu>
+
+            <item
+                android:id="@+id/nav_joboffers"
+                android:icon="@drawable/ic_user"
+                android:title="@string/jobapplications" />
+            <item
+                android:id="@+id/nav_jobapplications"
+                android:icon="@drawable/ic_ebook"
+                android:title="@string/jobapplications" />
+        </menu>
+
+    </item>
+
+    <item android:title="Equipments">
+        <menu>
+            <item
+                android:id="@+id/nav_equipmenthired"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/equipmentshired" />
+            <item
+                android:id="@+id/nav_equipmentrented"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/equipmentsrentoffers" />
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/nav_blank"
+        android:title="" />
+
+    <group>
+        <item
+            android:id="@+id/nav_signout"
+            android:icon="@drawable/ic_phone"
+            android:title="@string/btn_sign_out" />
+    </group>
+
+</menu>

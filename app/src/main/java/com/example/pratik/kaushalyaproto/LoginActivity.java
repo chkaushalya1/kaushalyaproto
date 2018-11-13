@@ -434,7 +434,7 @@ public class LoginActivity extends AppCompatActivity {
         if (mVerificationInProgress && !phones.equals("")) {
             startPhoneNumberVerification(phones);
         } else
-            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            startActivity(new Intent(getApplicationContext(), Login2Activity.class));
 // [END_EXCLUDE]
 
     }*/
