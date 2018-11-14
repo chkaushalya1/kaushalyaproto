@@ -68,4 +68,7 @@
     <string name="jobapplications">Apply for Jobs</string>
     <string name="equipmentshired">Equipments Hired</string>
     <string name="equipmentsrentoffers">Equipments rent Offers</string>
+    <string name="tab3">Tab3</string>
+    <string name="my_courses">My Courses</string>
+    <string name="all_courses">All Courses</string>
 </resources>
