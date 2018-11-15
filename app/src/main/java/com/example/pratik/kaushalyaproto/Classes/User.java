@@ -1,4 +1,4 @@
-package com.example.pratik.kaushalyaproto;
+package com.example.pratik.kaushalyaproto.Classes;
 
 public class User {
 

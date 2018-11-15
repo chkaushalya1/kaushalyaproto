@@ -14,7 +14,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
+import android.widget.Button;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -29,6 +29,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     CardView courseCard, jobCard, equipmentsCard;
 
+    Button videoButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +38,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
+        videoButton = findViewById(R.id.btn_video);
+        videoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), VideoActivity.class));
+            }
+        });
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -69,7 +79,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-        Toast.makeText(this, mAuth.getCurrentUser().getUid(), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, mAuth.getCurrentUser().getUid(), Toast.LENGTH_SHORT).show();
+
 
 
         //functionality
@@ -140,15 +151,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if (id == R.id.nav_myaccount) {
             // Handle the camera action
-        } else if (id == R.id.nav_mycourses) {
+        } else if (id == R.id.nav_exam) {
 
-        } else if (id == R.id.nav_jobapplications) {
+        } else if (id == R.id.nav_certificate) {
 
         } else if (id == R.id.nav_joboffers) {
 
         } else if (id == R.id.nav_equipmenthired) {
 
         } else if (id == R.id.nav_equipmentrented) {
+
+        } else if (id == R.id.nav_contactus) {
+
+        } else if (id == R.id.nav_kaushalya) {
 
         } else if (id == R.id.nav_signout) {
             signOut();

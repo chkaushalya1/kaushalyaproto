@@ -34,6 +34,7 @@ import java.util.concurrent.TimeUnit;
 
 public class LoginActivity extends AppCompatActivity {
 
+    AlertDialog dialog;
     //phone
     private static final String TAG = "PhoneAuthActivity";
     private static final String KEY_VERIFY_IN_PROGRESS = "key_verify_in_progress";
@@ -55,8 +56,6 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
-        Toast.makeText(this, "LoginActivity", Toast.LENGTH_SHORT).show();
 
         mAuth = FirebaseAuth.getInstance();
         EmailButton = findViewById(R.id.btn_email_option);
@@ -422,20 +421,4 @@ public class LoginActivity extends AppCompatActivity {
 
 
     }
-/*
-    @Override
-    public void onStart() {
-        super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        Toast.makeText(this, currentUser.getUid(), Toast.LENGTH_SHORT).show();
-
-// [START_EXCLUDE]
-        if (mVerificationInProgress && !phones.equals("")) {
-            startPhoneNumberVerification(phones);
-        } else
-            startActivity(new Intent(getApplicationContext(), Login2Activity.class));
-// [END_EXCLUDE]
-
-    }*/
 }

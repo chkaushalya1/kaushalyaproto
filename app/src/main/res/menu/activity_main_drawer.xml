@@ -2,30 +2,31 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
+    <item
+        android:id="@+id/nav_myaccount"
+        android:icon="@drawable/ic_user"
+        android:title="@string/myaccount" />
 
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_myaccount"
-            android:icon="@drawable/ic_user"
-            android:title="@string/myaccount" />
-        <item
-            android:id="@+id/nav_mycourses"
-            android:icon="@drawable/ic_ebook"
-            android:title="@string/mycourses" />
+    <item android:title="Course">
+        <menu>
+            <item
+                android:id="@+id/nav_exam"
+                android:icon="@drawable/ic_test"
+                android:title="@string/recentexams" />
 
-    </group>
+            <item
+                android:id="@+id/nav_certificate"
+                android:icon="@drawable/ic_certificate"
+                android:title="@string/certificates" />
+        </menu>
+    </item>
 
     <item android:title="Job">
         <menu>
-
             <item
                 android:id="@+id/nav_joboffers"
-                android:icon="@drawable/ic_user"
-                android:title="@string/jobapplications" />
-            <item
-                android:id="@+id/nav_jobapplications"
                 android:icon="@drawable/ic_ebook"
-                android:title="@string/jobapplications" />
+                android:title="@string/joboffers" />
         </menu>
 
     </item>
@@ -47,11 +48,19 @@
         android:id="@+id/nav_blank"
         android:title="" />
 
-    <group>
-        <item
-            android:id="@+id/nav_signout"
-            android:icon="@drawable/ic_phone"
-            android:title="@string/btn_sign_out" />
-    </group>
+    <item
+        android:id="@+id/nav_contactus"
+        android:icon="@drawable/ic_phone"
+        android:title="@string/contactus" />
+
+    <item
+        android:id="@+id/nav_kaushalya"
+        android:icon="@drawable/ic_letter_k"
+        android:title="@string/aboutkaushalya" />
+
+    <item
+        android:id="@+id/nav_signout"
+        android:icon="@drawable/ic_sign_out_option"
+        android:title="@string/btn_sign_out" />
 
 </menu>

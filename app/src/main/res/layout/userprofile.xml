@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileActivity">
+    tools:context=".MainActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -22,6 +22,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
@@ -34,7 +35,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0"
-            android:layout_gravity="center_vertical|center_horizontal"
             tools:ignore="MissingConstraints">
 
             <TextView
@@ -49,6 +49,35 @@
                 android:textColor="@android:color/white"
                 android:textSize="30sp"
                 android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:background="#FFFFFF"
+                android:orientation="horizontal"
+                android:paddingBottom="8dp">
+
+                <TextView
+
+                    android:id="@+id/appidtext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hint_appid"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/appidEdit"
+                    android:layout_width="274dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:ems="10"
+                    android:hint="@string/hint_appid"
+                    android:inputType="number"
+                    android:textColor="#000000"
+                    android:textColorHint="#BDBDBD" />
+            </LinearLayout>
 
 
             <LinearLayout
@@ -72,10 +101,10 @@
                     android:id="@+id/fnameEdit"
                     android:layout_width="274dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
                     android:ems="10"
                     android:hint="@string/hint_fname"
                     android:inputType="textPersonName"
-                    android:layout_marginLeft="8dp"
                     android:textColor="#000000"
                     android:textColorHint="#BDBDBD" />
             </LinearLayout>
@@ -100,10 +129,10 @@
                     android:id="@+id/mnameEdit"
                     android:layout_width="274dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
                     android:ems="10"
                     android:hint="@string/hint_mname"
                     android:inputType="textPersonName"
-                    android:layout_marginLeft="8dp"
                     android:textColor="#000000"
                     android:textColorHint="#BDBDBD" />
             </LinearLayout>
@@ -192,6 +221,180 @@
                     android:textColorHint="#BDBDBD" />
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:background="#FFFFFF"
+                android:orientation="horizontal"
+                android:paddingBottom="8dp">
+
+                <TextView
+
+                    android:id="@+id/agetext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hint_age"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/ageEdit"
+                    android:layout_width="274dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:ems="10"
+                    android:hint="@string/hint_age"
+                    android:inputType="number"
+                    android:textColor="#000000"
+                    android:textColorHint="#BDBDBD" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:background="#d8f7fb"
+                android:orientation="horizontal"
+                android:paddingBottom="8dp">
+
+                <TextView
+
+                    android:id="@+id/aadhartext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hint_aadhar"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/aadharEdit"
+                    android:layout_width="274dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:ems="10"
+                    android:hint="@string/hint_aadhar"
+                    android:inputType="number"
+                    android:textColor="#000000"
+                    android:textColorHint="#BDBDBD" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:background="#FFFFFF"
+                android:orientation="horizontal"
+                android:paddingBottom="8dp">
+
+                <TextView
+
+                    android:id="@+id/educationfinaltext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hint_final"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/educationfinalEdit"
+                    android:layout_width="274dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:ems="10"
+                    android:hint="@string/hint_final"
+                    android:inputType="text|number"
+                    android:textColor="#000000"
+                    android:textColorHint="#BDBDBD" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:background="#d8f7fb"
+                android:orientation="horizontal"
+                android:paddingBottom="8dp">
+
+                <TextView
+
+                    android:id="@+id/fieldtext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hint_field"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/fieldEdit"
+                    android:layout_width="274dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:ems="10"
+                    android:hint="@string/hint_fieldedit"
+                    android:inputType="text"
+                    android:textColor="#000000"
+                    android:textColorHint="#BDBDBD" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:background="#FFFFFF"
+                android:orientation="horizontal"
+                android:paddingBottom="8dp">
+
+                <TextView
+
+                    android:id="@+id/scoretext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hint_score"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/scoreEdit"
+                    android:layout_width="274dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:ems="10"
+                    android:hint="@string/hint_scoreedit"
+                    android:inputType="number"
+                    android:textColor="#000000"
+                    android:textColorHint="#BDBDBD" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:background="#d8f7fb"
+                android:orientation="horizontal"
+                android:paddingBottom="8dp">
+
+                <TextView
+
+                    android:id="@+id/timetext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hint_time"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/timeEdit"
+                    android:layout_width="274dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:ems="10"
+                    android:hint="@string/hint_timeedit"
+                    android:inputType="text|time"
+                    android:textColor="#000000"
+                    android:textColorHint="#BDBDBD" />
+
+            </LinearLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -199,7 +402,7 @@
                 android:paddingTop="16dp"
                 android:paddingBottom="8dp">
 
-                <android.support.design.button.MaterialButton
+                <Button
                     android:id="@+id/btn_saveandregister"
                     style="@style/AlertDialog.AppCompat"
                     android:layout_width="wrap_content"
@@ -209,16 +412,10 @@
                     android:layout_centerVertical="true"
                     android:layout_marginEnd="89dp"
                     android:layout_marginBottom="11dp"
+                    android:backgroundTint="@color/bg_main"
                     android:gravity="center_horizontal"
                     android:text="@string/save_and_register"
-                    android:paddingLeft="24dp"
-                    android:paddingTop="8dp"
-                    android:paddingRight="24dp"
-                    android:paddingBottom="8dp"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"
-                    android:textSize="18sp"
-                    app:cornerRadius="20dp" />
+                    android:textSize="20sp" />
             </RelativeLayout>
 
         </LinearLayout>

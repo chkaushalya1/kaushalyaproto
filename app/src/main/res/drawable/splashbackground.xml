@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:drawable="@color/colorPrimary"/>
+    <item android:drawable="@color/white" />
     <item>
-        <bitmap android:src="@drawable/icon"
+        <bitmap
+            android:src="@drawable/kaushalyalogo"
             android:gravity = "center"/>
     </item>
+
 </layer-list>

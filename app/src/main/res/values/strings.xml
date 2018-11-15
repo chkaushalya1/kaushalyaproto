@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">kaushalyaproto</string>
+    <string name="app_name">Kaushalya</string>
 
     <string name="action_sign_in_short">Register</string>
     <string name="email">Email</string>
@@ -46,7 +46,17 @@
     <string name="lname">Last Name</string>
     <string name="hint_fname">First Name</string>
     <string name="hint_mname">Middle Name</string>
+    <string name="hint_field">Job Field</string>
+    <string name="hint_time">time preferences</string>
+    <string name="hint_timeedit">time preferable for you to work</string>
+    <string name="hint_fieldedit">field in which job is requested</string>
     <string name="hint_lname">Last Name</string>
+    <string name="hint_appid">Application ID</string>
+    <string name="hint_score">Score of online exam</string>
+    <string name="hint_scoreedit">enter the score of exam of our app</string>
+    <string name="hint_aadhar">Aadhar Card</string>
+    <string name="hint_final">Education Completed</string>
+    <string name="hint_age">age</string>
     <string name="phone">Phone Number</string>
     <string name="hint_phonen">4864868548</string>
     <string name="save_and_register">Save and Register</string>
@@ -57,6 +67,10 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="recentexams">Recent Exams</string>
+    <string name="contactus">Contact us</string>
+    <string name="certificates">Certificates</string>
+    <string name="aboutkaushalya">About Kaushalya</string>
 
     <string name="equipments">Equipments</string>
     <string name="courses">Courses</string>
@@ -71,4 +85,8 @@
     <string name="tab3">Tab3</string>
     <string name="my_courses">My Courses</string>
     <string name="all_courses">All Courses</string>
+    <string name="btncontinue">Continue</string>
+    <string name="explore">Explore</string>
+    <string name="course_name">Course Name</string>
+    <string name="enroll">Enroll</string>
 </resources>
